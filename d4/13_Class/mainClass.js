@@ -202,3 +202,16 @@ console.log(CarC.getSpec());
 // 차는 타이어 4개와 문 4개가 있습니다.
 console.log(CarC.CREATED);
 //2022
+
+class Mathutils {
+  static PI = 3.1415;
+  constructor() {}
+  static add(a, b) {
+    return a + b + 10;
+  }
+  static delete(a, b) {
+    return a - b - 3;
+  }
+}
+
+console.log(Mathutils.add(7, 10) + Mathutils.delete(20, 5));
