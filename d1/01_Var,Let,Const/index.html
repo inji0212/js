@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--html parsing - 첫번째 줄부터 순차적으로 해석-->
+    <!--외부 스크립트-->
+    <!--Js parsing..-->
+    <!--Fetching: 로드 /excuting:실행 -->
+    <!--1분이상 지체되면 뒤에 있는 코드가 보이지 않는다.: 외부스크립트의 단점 -->
+    <script src="main.js"></script>
+
+    <!--async
+    html을 중단하지않고 동시에 fetching을 시작
+    단 excuting할땐 멈춤-->
+    <script async src="main.js"></script>
+
+    <!--b가 먼저 fetching끝날 경우 b가 먼저 나오게 됨
+    순서가 중요한 경우 문제가 생김
+    -> 이를 순서대로 진행시킬 수 있는게 defer-->
+    <script async src="a.js"></script>
+    <script async src="b.js"></script>
+    <script async src="c.js"></script>
+
+    <!--html parsing와  fetching은 동시,
+    excuting은 html parsing이 끝난 후 -->
+    <script defer src="main.js"></script>
+
+    <!--내부 스크립트-->
+    <script>
+      var str = "hello, world!";
+      console.log(str);
+    </script>
+  </head>
+  <body>
+    .. .. .. ..
+    <h1>Hello, world</h1>
+    <script src="main.js"></script>
+    <!--바디 끝에 둬서 단점을 해결 
+    html parsing 후 fetching 시작-->
+  </body>
+</html>
