@@ -101,10 +101,27 @@ function StudentB(name = "김기수", age = 20, gender = "male") {
 }
 
 //return this;
-
+//student2를 인스턴스라고 부른다.
 const Student2 = new StudentB("sucoding", 25, "female");
 console.log(Student2);
 
 //__proto__ :생성자 함수의prototype객체를 가리(참조)킵니다.
 // 모든 함수는 프로토타입을 가진다.(1대1)
 console.log(Student2.__proto__);
+
+function Student3(name = "김기수", age = 30, gender = "male") {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+Student3.prototype.introduce = function () {
+  return `hello, my name is ${this.name} and I'm ${this.age} years old`;
+};
+//프로토타입에 introduce를 생성
+//생성자 함수내에 introduce를 생성하지 않아도 자동 생성된다.
+const student3 = new Student3("inji", 26, "female");
+console.dir(student3);
+//Student3 { name: 'inji', age: 26, gender: 'female' }
+
+console.dir(student3.introduce());
+//"hello, my name is inji and I'm 26 years old"
