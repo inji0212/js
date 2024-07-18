@@ -41,3 +41,31 @@ console.log(str1.startsWith("Sat"));
 
 console.log(str1.startsWith("Sat", 3));
 // Expected output: false
+
+//string.search()
+// 해당 조건을 찾는다.
+// 배열이 아니라 가장앞에있는것 하나의 인덱스를 찾는다.
+
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+
+// Anything not a word character, whitespace or apostrophe
+const regex = /[^\w\s']/g;
+
+console.log(paragraph.search(regex));
+// Expected output: 41
+
+console.log(paragraph[paragraph.search(regex)]);
+// Expected output: "!"
+
+//string .includes()
+// 해당 조건이 포함되면 true
+const sentence = "The quick brown fox jumps over the lazy dog.";
+
+const word = "fox";
+
+console.log(
+  `The word "${word}" ${
+    sentence.includes(word) ? "is" : "is not"
+  } in the sentence`
+);
+// Expected output: "The word "fox" is in the sentence"
