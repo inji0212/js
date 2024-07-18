@@ -125,3 +125,10 @@ console.dir(student3);
 
 console.dir(student3.introduce());
 //"hello, my name is inji and I'm 26 years old"
+
+// 3.프로토타입체인
+// 3.1 인스턴스 내부의 __proto__속성으로 자신을 생성한 생성자 함수의 프로토 타입 객체를 참조하는 형상
+// 인스턴스와 연결된 프로토타입을 확인.
+// 프로토타입 객체에 _proto_속성 있는지 확인
+
+// 프로토타입체이닝- 이러한 행위로 원하는속성을 찾아내는것
