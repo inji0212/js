@@ -13,7 +13,6 @@ const students = [
 
 // 1. 키가 185인 학생 찾기
 {
-  function isHieght(students) {}
   const result = students.find((students) => students.height === 185);
   console.log(result.name);
 }
@@ -21,9 +20,9 @@ const students = [
 //2. 나이가 20살 이상인 학생들 찾기
 {
   const result = students.filter((students) => students.age >= 20);
-  const result1 = result.filter((students) => students.name);
-
-  console.log(result);
+  const namesArray = result.map((student) => student.name);
+  console.log(namesArray);
+  //push
 }
 
 //3. 키가 165 이하인 학생들이 있는지 찾아서 true, false로 반환하기
@@ -40,14 +39,17 @@ const students = [
 
 //5. 학생들의 평균 연령 구하기
 {
-  //const result = students.reduce((prev.age, curr.age) => prev.age + curr.age);
-  //console.log(result);
+  const ageArray = students.map((student) => student.age);
+  const sum = ageArray.reduce((a, b) => a + b);
+  console.log(Math.round(sum / ageArray.length));
 }
 
 //6. 남학생들의 평균 연령 구하기
 {
   const male = students.filter((students) => students.gender === "male");
-  console.log(male);
+  const ageArray = male.map((student) => student.age);
+  const sum = ageArray.reduce((a, b) => a + b);
+  console.log(Math.round(sum / ageArray.length));
 }
 
 //7. 야학생들만 따로 추출해서 새로운 배열 만들기
@@ -59,7 +61,13 @@ const students = [
 //8. 여학생들 중 나이가 가장 어린 학생 찾기
 {
   let female = students.filter((students) => students.gender === "female");
-  const result = female.sort((a, b) => b - a);
+  const ageArray = female.sort((a, b) => a.age - b.age);
+  /*
+EX. 20,19,17,22
+1. 1,2,-5, 2 -5 1 2 2 17, 20 19 22
+2. -3, 1,-3, 5 -3 -3 1 5 17 19 20 22
+3. -2, -1, 2, 5 
 
-  console.log(female[0]);
+*/
+  console.log(ageArray[0].name);
 }
