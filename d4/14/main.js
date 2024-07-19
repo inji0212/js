@@ -145,7 +145,7 @@ console.log(plants);
 //shift
 const array3 = [1, 2, 3];
 
-const firstElement = array1.shift();
+const firstElement = array3.shift();
 
 console.log(array1);
 // Expected output: Array [2, 3]
