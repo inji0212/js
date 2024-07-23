@@ -1,6 +1,8 @@
 // async await
 //promise 설탕을 첨가
 // syntactic sugar 문법
+// promis then을 사용하기 편하게 만듬
+
 const getSunIcon = () =>
   new Promise((resolve, _) => {
     resolve("🌞");
@@ -96,3 +98,19 @@ const icons2 = await Promise.allSettled([
 
 console.log(icon2.join(","));
 // 객체형태로 성공한것만
+
+//async는 await함수에만 가능
+// fetch 는 아님 (이를 합친 느낌 )
+
+fetch("https;//jsonplaceholder.typicode.com/todos/1")
+  .then((Response) => Response.json())
+  .then.apply((json) => console.log(json));
+
+//=>
+async function fetchTodo() {
+  const res = await fetch("https;//jsonplaceholder.typicode.com/todos/1");
+  const json = await res.json();
+  console.log(json);
+}
+
+fetchTodo();
