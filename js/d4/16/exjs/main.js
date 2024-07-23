@@ -10,9 +10,11 @@ ex) 32125 -> 52123
 
 //array reverse?
 function reverse_to_number(number) {
-  let str = number.toString().split("");
-  str.reverse();
-  return str.join("");
+  //string-> spilt()-> reverse()->join->number()
+  let str = Number(number.toString().split("").reverse().join(""));
+  //str.reverse();
+  // return str.join("");
+  return str;
 }
 
 let a = reverse_to_number(32125);
@@ -28,7 +30,9 @@ console.log(b); // 15231
 
 */
 
-function findLongStr(str) {
+//.sort()
+
+/*function findLongStr(str) {
   const words = str.split(" ");
   let max = 0;
   for (let index = 1; index < words.length; index++) {
@@ -38,7 +42,13 @@ function findLongStr(str) {
   }
   return words[max];
 }
-
+*/
+function findLongStr(str) {
+  return str
+    .split(" ")
+    .sort((a, b) => b.length - a.length)
+    .shift();
+}
 let result = findLongStr("we are the champion");
 console.log(result); // champion
 
